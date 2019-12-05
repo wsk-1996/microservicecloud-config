@@ -20,6 +20,11 @@ spring:
        initial-size: 5
        max-total: 5
        max-wait-millis: 200 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.wsk.springcloud.domain
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
 eureka:
   client:
     service-url:
@@ -50,6 +55,11 @@ spring:
        initial-size: 5
        max-total: 5
        max-wait-millis: 200 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.wsk.springcloud.domain
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
 eureka:
   client:
     service-url:
