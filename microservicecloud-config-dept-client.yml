@@ -41,13 +41,13 @@ info:
 server: 
    port: 8001
 spring: 
-   profiles: test      #开发环境
+   profiles: test      #测试环境
    application:
      name: microservicecloud-config-dept-client
    datasource:
      type: com.alibaba.druid.pool.DruidDataSource
      driver-class-name: com.mysql.cj.jdbc.Driver
-     url: 'jdbc:mysql:///test?useSSL=false&serverTimezone=UTC'
+     url: 'jdbc:mysql:///test1?useSSL=false&serverTimezone=UTC'
      username: root
      password: 123456
      dbcp2:
