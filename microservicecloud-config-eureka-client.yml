@@ -9,10 +9,14 @@ spring:
     profiles: dev      #开发环境
     application: 
         name: microservicecloud-config-eureka-client
-eureka: 
-    client: 
-       service-url: 
-           defaultZone: http://eureka7001.com:7001/eureka/
+eureka:
+  instance:
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false   #不向注册中心注册自己
+    fetch-registry: false         #表示自己就是注册中心，职责是维护服务实例，并不需要去检索服务
+    service-url: 
+       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ---
 server: 
    port: 7002
@@ -20,7 +24,11 @@ spring:
     profiles: test     #测试环境
     application: 
         name: microservicecloud-config-eureka-client
-eureka: 
-    client: 
-       service-url: 
-           defaultZone: http://eureka7002.com:7002/eureka/
+eureka:
+  instance:
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false   #不向注册中心注册自己
+    fetch-registry: false         #表示自己就是注册中心，职责是维护服务实例，并不需要去检索服务
+    service-url: 
+       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
